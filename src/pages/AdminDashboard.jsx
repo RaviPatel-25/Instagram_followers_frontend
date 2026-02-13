@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import BASE_URL from "../../config";
 
 export default function AdminDashboard() {
 
@@ -37,7 +36,7 @@ export default function AdminDashboard() {
     try {
       setLoading(true);
 
-      const res = await fetch(`${BASE_URL}/api/users`, {
+      const res = await fetch("/api/users", {
         headers: {
           Authorization: token,
         },
@@ -61,7 +60,7 @@ export default function AdminDashboard() {
 
   const verifyUser = async (id, status) => {
 
-    await fetch(`${BASE_URL}/api/users/verify/${id}`, {
+    await fetch(`/api/users/verify/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -79,7 +78,7 @@ export default function AdminDashboard() {
 
     if (!window.confirm("Delete this user?")) return;
 
-    await fetch(`${BASE_URL}/api/users/delete/${id}`, {
+    await fetch(`/api/users/delete/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: token,
@@ -109,7 +108,7 @@ export default function AdminDashboard() {
 
     try {
 
-      const res = await fetch(`${BASE_URL}/api/admin/register`, {
+      const res = await fetch("/api/admin/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
