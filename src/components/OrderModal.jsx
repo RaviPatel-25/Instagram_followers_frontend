@@ -24,7 +24,7 @@ function OrderModal({ package: pkg, onClose }) {
       }
 
       try {
-    const res = await axios.post(`${BASE_URL}/api/users/submit`, {
+    const res = await axios.post("/api/users/submit", {
       instagram: profile,
       email: email,
       whatsapp: whatsapp,
