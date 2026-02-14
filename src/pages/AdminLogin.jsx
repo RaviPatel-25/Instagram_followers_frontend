@@ -14,7 +14,7 @@ export default function Login({ onLogin }) {
 
     try {
       const res = await axios.post(
-        "/api/admin/login",
+        "https://backendinsta-s0nf.onrender.com/api/admin/login",
         { email, password }
       );
 
