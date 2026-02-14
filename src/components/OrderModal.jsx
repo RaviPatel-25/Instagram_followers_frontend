@@ -24,7 +24,7 @@ function OrderModal({ package: pkg, onClose }) {
       }
 
       try {
-    const res = await axios.post("/api/users/submit", {
+    const res = await axios.post("https://backendinsta-s0nf.onrender.com/api/users/submit", {
       instagram: profile,
       email: email,
       whatsapp: whatsapp,
