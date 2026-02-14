@@ -36,7 +36,7 @@ export default function AdminDashboard() {
     try {
       setLoading(true);
 
-      const res = await fetch("/api/users", {
+      const res = await fetch("https://backendinsta-s0nf.onrender.com/api/users", {
         headers: {
           Authorization: token,
         },
@@ -60,7 +60,7 @@ export default function AdminDashboard() {
 
   const verifyUser = async (id, status) => {
 
-    await fetch(`/api/users/verify/${id}`, {
+    await fetch(`https://backendinsta-s0nf.onrender.com/api/users/verify/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -78,7 +78,7 @@ export default function AdminDashboard() {
 
     if (!window.confirm("Delete this user?")) return;
 
-    await fetch(`/api/users/delete/${id}`, {
+    await fetch(`https://backendinsta-s0nf.onrender.com/api/users/delete/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: token,
@@ -108,7 +108,7 @@ export default function AdminDashboard() {
 
     try {
 
-      const res = await fetch("/api/admin/register", {
+      const res = await fetch("https://backendinsta-s0nf.onrender.com/api/admin/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
