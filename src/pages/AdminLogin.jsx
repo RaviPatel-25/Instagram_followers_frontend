@@ -22,9 +22,12 @@ export default function Login({ onLogin }) {
 
       onLogin();
       navigate('/admindashboard');
-    } catch {
-      setError("Invalid Email or Password");
-    }
+    } catch (err) {
+  alert("Status: " + err.response?.status);
+  alert("Message: " + JSON.stringify(err.response?.data));
+  console.log(err);
+}
+
   };
 
   return (
